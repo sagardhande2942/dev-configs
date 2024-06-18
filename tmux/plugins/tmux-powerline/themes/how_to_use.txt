@@ -1,0 +1,1 @@
+You have to link this file in your ~/.nvim/plugins/tmux-powerline/themes/
