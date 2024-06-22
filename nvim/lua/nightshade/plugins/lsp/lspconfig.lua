@@ -102,6 +102,13 @@ return {
 					},
 				})
 			end,
+			["pyright"] = function()
+				lspconfig["pyright"].setup({
+					root_dir = function()
+						return vim.fn.getcwd()
+					end,
+				})
+			end,
 
 			-- ["pylsp"] = function()
 			--   lspconfig["pylsp"].setup({

@@ -19,7 +19,8 @@ return {
 				graphql = { "prettier" },
 				liquid = { "prettier" },
 				lua = { "stylua" },
-				python = { "isort", "black" },
+				python = { "isort", "yapf" },
+				-- "black" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
@@ -27,6 +28,9 @@ return {
 				timeout_ms = 1000,
 			},
 		})
+		require("conform").formatters.yapf = {
+			prepend_args = { "--style", "/Users/sagardhande/.config/yapf/.style.yapf" },
+		}
 
 		vim.keymap.set({ "n", "v" }, "<leader>mp", function()
 			conform.format({
